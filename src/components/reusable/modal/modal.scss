@@ -1,0 +1,58 @@
+@import "@styles/global.scss";
+
+#modals {
+	:last-child {
+		.overlay {
+			// margin-top: 64px;
+			@include blur;
+		}
+	}
+}
+
+.overlay {
+	z-index: $z-index-modal-overlay;
+
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.modal-container {
+	z-index: $z-index-modal-container;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100vw;
+	height: 100vh;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	.overlay-close-btn {
+		z-index: $z-index-modal-btn;
+
+		display: flex;
+
+		position: absolute;
+		top: 37px;
+		right: 34px;
+		width: fit-content;
+		flex-direction: row;
+		align-items: center;
+		font-size: 18px;
+	}
+
+	.overlay-close-icon {
+		margin-left: 16px;
+	}
+}
+
+.modal-content {
+	z-index: $z-index-modal-content;
+
+	text-align: center;
+}

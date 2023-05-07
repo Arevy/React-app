@@ -1,0 +1,46 @@
+@import "@styles/global.scss";
+
+.loading-wrapper {
+	// z-index: 300;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	// background: $main-background;
+}
+
+.loading-container {
+	display: flex;
+}
+.dots-img {
+	margin-bottom: 24px;
+}
+.dots-img-invert {
+	filter: invert(85%);
+}
+.dots-text {
+	margin-bottom: 30px;
+}
+
+.loading-dot {
+	display: block;
+
+	width: 10px;
+	height: 10px;
+	margin-right: 16px;
+	background-color: $main-color;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}

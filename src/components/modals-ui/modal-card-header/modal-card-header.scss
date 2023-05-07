@@ -1,0 +1,75 @@
+@import "@styles/global.scss";
+
+.modal-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 100%;
+	padding: 16px;
+}
+
+.modal-header-left {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	font-size: 20px;
+	color: $text-color-black;
+
+	.order-id {
+		font-size: 14px;
+		color: $text-color-grey;
+	}
+
+	.user-name {
+		font-size: 20px;
+		font-weight: 600;
+	}
+}
+
+.modal-header-right {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	.total-items {
+		width: fit-content;
+		height: fit-content;
+		margin-right: 16px;
+		padding: 6px 16px 5px;
+
+		font-size: 14px;
+		color: $text-color-black;
+		background: $second-background;
+		border-radius: 16px;
+	}
+}
+
+.ready-to-pick,
+.cancelled-order {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: fit-content;
+	height: 32px;
+	padding: 0px 16px;
+
+	background-color: $background-yellow;
+	font-size: 14px;
+	color: $text-color-black;
+	border-radius: 35px;
+	line-height: 32px;
+
+	.check-icon,
+	.attention-icon {
+		margin-right: 6px;
+	}
+}
+
+.cancelled-order {
+	background-color: rgba(255, 73, 106, 0.1);
+	border-radius: 16px;
+	color: $text-color-pink;
+}

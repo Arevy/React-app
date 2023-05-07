@@ -1,0 +1,89 @@
+@import "@styles/global.scss";
+
+.reject-modal-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.overlay-title {
+		width: 100vw;
+		margin-bottom: 40px;
+		font-size: 40px;
+		font-weight: 500;
+	}
+
+	.buttons-wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.card-btn {
+		width: 154px;
+		height: 56px;
+		padding: 14px 48px;
+		border-radius: 2px;
+
+		font-size: 20px;
+		text-align: center;
+		border: none;
+
+		&:focus-visible {
+			outline: none;
+		}
+
+		&.yes {
+			margin-right: 16px;
+			background-color: unset;
+			border: 1px solid $main-color;
+			color: $main-color;
+		}
+
+		&.cancel {
+			background-color: $main-color;
+			color: $text-color-black;
+			font-weight: 500;
+		}
+	}
+
+	.horizontal-line {
+		width: 32px;
+		height: 1px;
+		margin: 40px 0;
+
+		background: $main-color;
+		opacity: 0.3;
+	}
+
+	.reject-subtitle {
+		margin-bottom: 20px;
+
+		color: $main-color;
+		opacity: 0.8;
+	}
+
+	.customer-service {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		.right-section {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			margin-left: 16px;
+		}
+
+		.customer-service-title {
+			margin-bottom: 4px;
+			opacity: 0.8;
+		}
+
+		.phone-number {
+			font-size: 20px;
+			font-weight: 700;
+		}
+	}
+}

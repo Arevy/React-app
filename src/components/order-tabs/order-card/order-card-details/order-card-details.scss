@@ -1,0 +1,84 @@
+@import "@styles/global.scss";
+
+.products-details-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	width: 100%;
+	padding: 0 16px 16px 16px;
+	overflow: hidden;
+}
+
+.product-container {
+	max-height: 504px;
+}
+
+.border-line {
+	width: 100%;
+	height: 1px;
+	background-color: $border-color;
+}
+
+.buttons-section {
+	display: flex;
+	flex-direction: row;
+
+	width: 100%;
+	margin-top: 16px;
+}
+
+.accept-btn,
+.reject-btn,
+.collected-by-courier-btn,
+.print-btn,
+.close-btn {
+	height: 40px;
+	padding: 0;
+	border: none;
+	text-align: center;
+	line-height: 28px;
+	font-size: 16px;
+
+	&:focus-visible {
+		outline: none;
+	}
+}
+
+.accept-btn {
+	width: 75.07%;
+	background-color: $main-background;
+	color: $main-color;
+	font-weight: 500;
+}
+
+.reject-btn {
+	width: 24.93%;
+	margin-left: 12px;
+	background-color: $main-color;
+	color: $text-color-black;
+	border: 1px solid rgba(255, 73, 106, 0.6);
+}
+
+.collected-by-courier-btn,
+.print-btn {
+	width: 50%;
+	font-weight: 500;
+	background-color: $main-background;
+	color: $main-color;
+}
+
+.print-btn {
+	margin-right: 12px;
+	font-weight: 400;
+	background-color: $main-color;
+	color: $text-color-black;
+	border: 1px solid $text-color-grey;
+}
+
+.close-btn {
+	width: 100%;
+	background-color: $main-background;
+	color: $main-color;
+	font-weight: 500;
+}

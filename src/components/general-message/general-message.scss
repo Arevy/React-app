@@ -1,0 +1,103 @@
+@import "@styles/global.scss";
+
+.general-message-wrapper {
+	z-index: 500;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 100%;
+
+	background-color: black;
+
+	&.wrapper-black {
+		background-color: unset;
+		color: white;
+	}
+}
+
+.general-message-container {
+	max-width: 590px;
+	// max-height: 437px;
+
+	padding: 64px 96.5px;
+
+	background-color: $main-color;
+
+	color: $text-color-black;
+	text-align: center;
+
+	&.container-black {
+		background-color: unset;
+		color: white;
+	}
+}
+
+.general-message-title {
+	margin: 16px 0 6px 0;
+
+	font-size: 32px;
+	font-weight: 700;
+
+	&.modal {
+		font-weight: 600;
+	}
+}
+
+.general-message-subtitle {
+	margin-bottom: 32px;
+	font-size: 16px;
+}
+.general-message-error {
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	white-space: pre-line;
+	word-break: break-word;
+
+	color: red;
+	margin-bottom: 32px;
+	font-size: 16px;
+	max-height: 437px;
+	overflow: scroll;
+}
+
+.general-message-btn {
+	padding: 14px 48px;
+	width: 153px;
+	height: 56px;
+
+	font-weight: 500;
+	font-size: 20px;
+	text-align: center;
+
+	background-color: $main-background;
+	color: $main-color;
+	border: none;
+	border-radius: 2px;
+
+	&:focus-visible {
+		outline: none;
+	}
+}
+
+.general-message-black {
+	width: 160px;
+	height: 56px;
+
+	font-size: 18px;
+	font-weight: 700;
+	color: $main-color;
+	line-height: 28px;
+	text-align: center;
+
+	background-color: unset;
+	border: 1px solid $main-color;
+	border-radius: 2px;
+
+	&:focus-visible {
+		outline: none;
+	}
+}

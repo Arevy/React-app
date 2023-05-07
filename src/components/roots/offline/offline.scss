@@ -1,0 +1,11 @@
+@import "@styles/global.scss";
+
+.offline-wrapper {
+	z-index: 1000;
+
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	
+	@include blur;
+}

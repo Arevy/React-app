@@ -1,0 +1,140 @@
+{
+  "name": "terminalx-marketplace-ipad-app",
+  "version": "0.1",
+  "private": true,
+  "author": "RND Software",
+  "scripts": {
+    "------ DEVELOPMENT ------": "",
+    "start": "concurrently \"yarn start:client\" \"yarn start:server\"",
+    "start:network": "cross-env ENABLE_DEVSERVER_NETWORK=true yarn start",
+    "start:client": "cross-env NODE_ENV=development craco start",
+    "start:server": "cross-env NODE_ENV=development nodemon ./server/index.ts",
+    "eject": "react-scripts eject",
+    "------ PRODUCTION ------": "",
+    "build:prod": "cross-env NODE_ENV=production craco build",
+    "start:prod": "cross-env NODE_ENV=production ts-node ./server/index.ts",
+    "docker": "cross-env TAG=latest docker-compose build app && docker-compose push app",
+    "------ UTILS ------": "",
+    "cancel-all-pending-purchases": "ts-node ./scripts/onport/purchases-cancelAllPending.ts",
+    "eslint": "eslint ./src",
+    "format": "yarn prettier --write \"./**/*.ts\" \"./**/*.tsx\"",
+    "g": "node ./scripts/generate",
+    "rename": "node ./scripts/rename",
+    "schema": "openapi-typescript ./misc/onport-schema/jetti-openapi-source.yaml --output ./server/api/interfaces/onport-generated.ts",
+    "lint-staged": "lint-staged",
+    "test": "craco test"
+  },
+  "pre-commit": [
+    "lint-staged"
+  ],
+  "lint-staged": {
+    "src/**/*{.js,.ts,.tsx}": "prettier -l"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "importSort": {
+    ".js, .jsx, .ts, .tsx": {
+      "parser": "typescript",
+      "style": "module-alias",
+      "options": {
+        "alias": [
+          "@server",
+          "@client"
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "@amplitude/analytics-node": "^1.1.0",
+    "@types/lodash": "^4.14.191",
+    "@types/winston-loggly-bulk": "^3.0.3",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.20.2",
+    "classnames": "^2.3.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dayjs": "^1.11.7",
+    "dotenv-flow": "^3.2.0",
+    "dotenv-json": "^1.0.0",
+    "express": "^4.18.2",
+    "framer-motion": "^10.0.1",
+    "jsbarcode": "^3.11.5",
+    "lodash": "^4.17.21",
+    "mobx": "^6.8.0",
+    "mobx-react": "^7.6.0",
+    "mobx-react-lite": "^3.2.2",
+    "node-sass": "^8.0.0",
+    "opening_hours": "^3.8.0",
+    "qs": "^6.11.0",
+    "react": "^18.2.0",
+    "react-countdown-circle-timer": "^3.1.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "6.8.2",
+    "react-scripts": "^5.0.1",
+    "react-use": "^17.4.0",
+    "ts-node": "^10.9.1",
+    "tsc": "^2.0.4",
+    "typescript": "^4.9.5",
+    "uuid": "^9.0.0",
+    "web-vitals": "^3.1.1",
+    "winston": "^3.8.2",
+    "winston-loggly-bulk": "^3.2.1",
+    "winston-transport": "^4.5.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/axios": "^0.14.0",
+    "@types/bluebird": "^3.5.38",
+    "@types/cookie-parser": "^1.4.3",
+    "@types/cors": "^2.8.13",
+    "@types/ejs": "^3.1.2",
+    "@types/humps": "^2.0.1",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.14.5",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/title": "^3.4.1",
+    "@types/uuid": "^9.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "concurrently": "^7.6.0",
+    "craco": "^0.0.3",
+    "ejs": "^3.1.6",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-react": "^7.32.2",
+    "humps": "^2.0.1",
+    "import-sort-style-module-alias": "^1.1.0",
+    "lint-staged": "^13.1.2",
+    "nodemon": "^2.0.21",
+    "openapi-typescript": "^6.1.1",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.8.4",
+    "prettier-package-json": "^2.8.0",
+    "prettier-plugin-import-sort": "^0.0.7",
+    "title": "^3.4.3"
+  }
+}

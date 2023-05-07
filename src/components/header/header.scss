@@ -1,0 +1,40 @@
+@import "@styles/global.scss";
+
+.header-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 32px;
+}
+
+.menu-selector {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+.menu-title {
+	margin-left: 16px;
+	font-size: 20px;
+}
+
+.terminalx-img {
+	// padding-right: 57px;
+}
+
+.store-btn {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+
+	width: fit-content;
+}
+
+.store-btn-text {
+	margin-left: 8px;
+}
+
+.circle-icon {
+}

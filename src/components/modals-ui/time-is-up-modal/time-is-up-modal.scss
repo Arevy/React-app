@@ -1,0 +1,41 @@
+@import "@styles/global.scss";
+
+.time-is-up-modal-content {
+	padding: 64px 60px;
+	background-color: $main-color;
+	color: $text-color-black;
+}
+
+.time-is-up-title {
+	margin: 32px 0 6px 0;
+	font-size: 32px;
+	font-weight: 600;
+}
+
+.time-is-up-subtitle {
+	margin-bottom: 32px;
+	font-size: 16px;
+
+	.order-id {
+		color: $text-color-blue;
+	}
+}
+
+.time-is-up-ok-btn {
+	width: 160px;
+	height: 56px;
+	padding: 14px 48px;
+
+	font-weight: 500;
+	font-size: 20px;
+	text-align: center;
+
+	background-color: $main-background;
+	color: $main-color;
+	border: none;
+	border-radius: 2px;
+
+	&:focus-visible {
+		outline: none;
+	}
+}

@@ -1,0 +1,60 @@
+@import "@styles/global.scss";
+
+.ready-to-pick-modal-container {
+	background-color: $main-color;
+}
+
+.ready-tab {
+	justify-content: center;
+	align-items: center;
+	padding: 24px 0;
+}
+
+.centered-title {
+	font-size: 14px;
+	color: $text-color-grey;
+}
+
+.centered-subtitle {
+	padding-bottom: 19px;
+	font-size: 20px;
+	font-weight: 500;
+	padding-top: 4px;
+}
+
+.click-area {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.view-order {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top: 8px;
+	font-size: 14px;
+	font-weight: 600;
+	color: $text-color-blue;
+}
+
+.right-arrow {
+	margin-left: 7px;
+}
+
+.collected-btn {
+	width: 170px;
+	height: fit-content;
+	margin-top: 18px;
+	padding: 6px 10.5px;
+
+	font-size: 15px;
+	font-weight: 500;
+	text-align: center;
+	line-height: 28px;
+
+	border: none;
+	border-radius: 2px;
+	background-color: $main-background;
+	color: $main-color;
+}

@@ -1,0 +1,55 @@
+image: atlassian/default-image:3
+
+definitions:
+  services:
+    docker:
+      memory: 6000
+
+  steps:
+    - step: &set-environment
+        name: Set Environment
+        artifacts:
+          - environment.sh
+
+    - step: &Build
+        name: Build + push to docker
+        services:
+          - docker
+        caches:
+          - docker
+        size: 2x
+        script:
+          - source environment.sh
+          - cat environment.sh
+          - export ONPORT_MASTER_TOKEN=$(case $ENVIRONMENT in "production") echo "$ONPORT_MASTER_TOKEN_PROD" ;; *) echo "$ONPORT_MASTER_TOKEN_DEV";; esac)
+          - export SHIPPING_LABEL_GENERATOR_URL=$(case $ENVIRONMENT in "production") echo "$SHIPPING_LABEL_GENERATOR_URL_PROD" ;; *) echo "$SHIPPING_LABEL_GENERATOR_URL_DEV";; esac)
+          - printenv
+          - apt-get update && apt-get install curl jo -y
+          - export TAG=`echo "$BITBUCKET_BRANCH-$BITBUCKET_BUILD_NUMBER" | sed 's/^[ \t]*//;s/[ \t]*$//' | sed -r 's/[^[:alnum:]]/-/g' | tr -s - | tr '[:upper:]' '[:lower:]'`
+          - export CI_COMMIT_SHA=$BITBUCKET_COMMIT
+          - env | grep -e LOGGLY_TOKEN -e ENVIRONMENT -e AMPLITUDE_API_KEY -e ONPORT_MASTER_TOKEN -e "\<SHIPPING_LABEL_GENERATOR_URL\>" -e ^BITBUCKET_ -e ^TAG -e ^CI_COMMIT_SHA -e ^BUILD_DATE | sort | jo -p > ci-version.json
+          - cat ci-version.json
+          - docker-compose build app
+          - echo "$DOCKER_REGISTRY_PASS" | docker login fra.ocir.io --username $DOCKER_REGISTRY_USER --password-stdin
+          - docker-compose push app
+
+pipelines:
+  branches:
+    "{development}":
+      - step:
+          <<: *set-environment
+          script:
+            - echo export ENVIRONMENT=development >> environment.sh
+      - step: *Build
+    "{stage}":
+      - step:
+          <<: *set-environment
+          script:
+            - echo export ENVIRONMENT=staging >> environment.sh
+      - step: *Build
+    "{master}":
+      - step:
+          <<: *set-environment
+          script:
+            - echo export ENVIRONMENT=production >> environment.sh
+      - step: *Build

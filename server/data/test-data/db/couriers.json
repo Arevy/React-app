@@ -1,0 +1,22 @@
+[
+	{
+		"name": "courier1",
+		"phone": "07423432342",
+		"website": "www.courier1.co.il",
+		"email:": "courier@courier1.co.il",
+		"price": {
+			"amount": "40",
+			"currency": "NIS"
+		}
+	},
+	{
+		"name": "courier2",
+		"phone": "07423432342",
+		"email:": "courier@courier2.co.il",
+		"website": "www.courier2.co.il",
+		"price": {
+			"amount": "30",
+			"currency": "NIS"
+		}
+	}
+]

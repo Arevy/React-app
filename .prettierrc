@@ -1,0 +1,22 @@
+{
+	"jsxSingleQuote": false,
+	"singleQuote": false,
+	"tabWidth": 2,
+	"useTabs": true,
+  "overrides": [
+    {
+      "files": "package.json",
+      "options": {
+        "tabWidth": 2,
+        "useTabs": false,
+        "printWidth": 512
+      }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "tabWidth": 4,
+        "useTabs": false
+      }
+    }]
+}

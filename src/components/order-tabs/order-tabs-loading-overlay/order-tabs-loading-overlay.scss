@@ -1,0 +1,28 @@
+@import "@styles/global.scss";
+
+.orders-loading {
+	z-index: $z-index-orders-loading;
+
+	position: absolute;
+	width: calc(40.17% - 12px);
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+
+	@include blur;
+
+	color: white;
+
+	.orders-loading-label {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		margin-top: 32px;
+
+		img {
+			@include animation-line;
+		}
+	}
+}

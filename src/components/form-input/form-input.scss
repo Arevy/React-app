@@ -1,0 +1,55 @@
+@import "@styles/global.scss";
+
+.input-wrapper {
+	position: relative;
+	width: 293px;
+	height: 56px;
+	margin-bottom: 12px;
+}
+
+.input {
+	width: 100%;
+	height: 100%;
+
+	padding: 8px 16px;
+	border: 1px solid $border-color3;
+	border-radius: 2px;
+
+	background-color: $main-background;
+	color: $main-color;
+
+	&:focus-visible {
+		outline: none;
+		border: 1px solid $border-color4;
+	}
+}
+
+.label {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+
+	margin: 16px;
+	color: $text-color-grey2;
+	background-color: $main-background;
+	transition: all 0.1s;
+
+	&.up {
+		visibility: visible;
+		opacity: 1;
+		margin: -10px 0 0 10px;
+		padding: 0 10px;
+		font-size: 12px;
+	}
+}
+
+.eye-icon {
+	position: absolute;
+	right: 5%;
+	top: 55%;
+	transform: translate(-5%, -55%);
+
+	&.hide {
+		display: none;
+	}
+}

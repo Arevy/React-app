@@ -1,0 +1,12 @@
+version: "3.5"
+
+services:
+  app:
+    container_name: tx-mp-ipad-container
+    image: fra.ocir.io/fro79hnalhj1/tx-mp-ipad:${TAG}
+    restart: unless-stopped
+    build: .
+    environment:
+      TEST_VAR: 2-1337
+    ports:
+      - 80:3011

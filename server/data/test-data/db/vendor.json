@@ -1,0 +1,19 @@
+{
+	"id": 12,
+	"identifier": "Mango - Azrieli Mall",
+	"opening_hours": {
+		"from": "Mon-Sat 9:00",
+		"to": "Mon-Sat 18:00"
+	},
+	"custom_settings": null,
+	"shipping-information": {
+		"address": "Derech Menachem Begin 132, Tel Aviv-Yafo",
+		"sender": "Mango store Azrieli",
+		"email": "",
+		"phone": "052-478392"
+	},
+	"orders": {
+		"active_orders_ids": [102, 103],
+		"past_orders_ids": [101]
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"order_fulfillment": {
+		"minutes_to_accept": 15,
+		"minutes_to_pick": 90
+	},
+	"default_opening_hours": {
+		"from": "10:00",
+		"to": "18:00"
+	}
+}

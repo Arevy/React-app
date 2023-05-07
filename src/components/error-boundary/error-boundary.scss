@@ -1,0 +1,12 @@
+.error-boundary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    .general-message-container {
+        max-width: 100%;
+    }
+}
